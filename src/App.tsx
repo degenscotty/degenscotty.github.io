@@ -16,8 +16,12 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/project/:id" element={<ProjectPage />} />
-              <Route path="/builder" element={<BuilderPage />} />
-              <Route path="/builder/:id" element={<BuilderPage />} />
+              {import.meta.env.DEV && (
+                <>
+                  <Route path="/builder" element={<BuilderPage />} />
+                  <Route path="/builder/:id" element={<BuilderPage />} />
+                </>
+              )}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Layout>

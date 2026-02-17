@@ -22,12 +22,14 @@ export function ProjectPage() {
             Back to projects
           </Link>
         </Button>
-        <Button variant="outline" size="sm" asChild className="border-border/50 whitespace-nowrap">
-          <Link to={`/builder/${project.id}`}>
-            <Pencil className="h-3.5 w-3.5 mr-1.5" />
-            Edit
-          </Link>
-        </Button>
+        {import.meta.env.DEV && (
+          <Button variant="outline" size="sm" asChild className="border-border/50 whitespace-nowrap">
+            <Link to={`/builder/${project.id}`}>
+              <Pencil className="h-3.5 w-3.5 mr-1.5" />
+              Edit
+            </Link>
+          </Button>
+        )}
       </div>
       <ProjectDetail project={project} />
     </div>

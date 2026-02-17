@@ -47,12 +47,14 @@ export function Header() {
             ))}
           </nav>
 
-          <Button variant="outline" size="sm" asChild className="hidden md:inline-flex mr-1 border-border/50 whitespace-nowrap">
-            <Link to="/builder">
-              <Plus className="h-3.5 w-3.5 mr-1" />
-              New Project
-            </Link>
-          </Button>
+          {import.meta.env.DEV && (
+            <Button variant="outline" size="sm" asChild className="hidden md:inline-flex mr-1 border-border/50 whitespace-nowrap">
+              <Link to="/builder">
+                <Plus className="h-3.5 w-3.5 mr-1" />
+                New Project
+              </Link>
+            </Button>
+          )}
 
           <ThemeToggle />
 
@@ -84,16 +86,18 @@ export function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <Link
-                  to="/builder"
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium transition-colors hover:text-foreground text-muted-foreground"
-                >
-                  <span className="flex items-center gap-2">
-                    <Plus className="h-4 w-4" />
-                    New Project
-                  </span>
-                </Link>
+                {import.meta.env.DEV && (
+                  <Link
+                    to="/builder"
+                    onClick={() => setIsOpen(false)}
+                    className="text-lg font-medium transition-colors hover:text-foreground text-muted-foreground"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Plus className="h-4 w-4" />
+                      New Project
+                    </span>
+                  </Link>
+                )}
               </nav>
             </SheetContent>
           </Sheet>
