@@ -177,6 +177,35 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: 'projectaccess',
+    title: 'Project Access',
+    category: 'programming',
+    thumbnail: '/images/projectaccess.jpg',
+    shortDescription: 'A fast-paced sports arcade game with online multiplayer supporting up to 10 players.',
+    technologies: ['Unreal Engine', 'C++', 'Multiplayer', 'Networking'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Project Access is a fast-paced sports arcade online multiplayer game developed as a student project at Digital Arts & Entertainment. Players compete in teams of up to 10, scoring points while preventing opponents from scoring using a variety of abilities and team strategies.',
+      },
+      {
+        type: 'paragraph',
+        text: 'The game features 9+ abilities, character customization with level progression, multiple maps, and both first-person and third-person camera modes. Multiplayer is supported through both dedicated servers and ad-hoc networking.',
+      },
+      {
+        type: 'paragraph',
+        text: 'I worked on this project as a programmer alongside Kevan Vanderstichelen, with art by Aitor Randez, Antonio Serrano, and Mattias Vandensaffele.',
+      },
+    ],
+    links: [
+      {
+        label: 'Play on itch.io',
+        url: 'https://kevanvanderstichelen.itch.io/project-access',
+        icon: 'external',
+      },
+    ],
+  },
+  {
     id: 'highpolybot',
     title: 'High Poly Bot',
     category: 'art',

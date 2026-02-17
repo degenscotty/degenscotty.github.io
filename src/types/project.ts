@@ -9,7 +9,13 @@ export interface Media {
   caption?: string;
 }
 
-export type ContentBlockType = 'paragraph' | 'media' | 'media-grid';
+export type ContentBlockType = 'heading' | 'paragraph' | 'media' | 'media-grid';
+
+export interface HeadingBlock {
+  type: 'heading';
+  text: string;
+  level?: 2 | 3 | 4;
+}
 
 export interface ParagraphBlock {
   type: 'paragraph';
@@ -27,7 +33,7 @@ export interface MediaGridBlock {
   columns?: 2 | 3 | 4;
 }
 
-export type ContentBlock = ParagraphBlock | MediaBlock | MediaGridBlock;
+export type ContentBlock = HeadingBlock | ParagraphBlock | MediaBlock | MediaGridBlock;
 
 export type LinkIcon = 'github' | 'external' | 'download' | 'video';
 

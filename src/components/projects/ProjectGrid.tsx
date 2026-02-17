@@ -13,14 +13,14 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] } },
 };
 
 export function ProjectGrid({ projects, category, title }: ProjectGridProps) {
@@ -33,17 +33,21 @@ export function ProjectGrid({ projects, category, title }: ProjectGridProps) {
   }
 
   return (
-    <section className="py-8">
+    <section className="py-10">
       {title && (
-        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-6">
-          {title}
-        </h2>
+        <div className="flex items-center gap-3 mb-8">
+          <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-[0.15em]">
+            {title}
+          </h2>
+          <div className="flex-1 h-px bg-border" />
+        </div>
       )}
       <motion.div
         variants={container}
         initial="hidden"
-        animate="show"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        whileInView="show"
+        viewport={{ once: true, margin: '-40px' }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
       >
         {filteredProjects.map((project) => (
           <motion.div key={project.id} variants={item}>
