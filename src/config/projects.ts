@@ -47,7 +47,9 @@ export const projects: Project[] = [
         text: 'Sadly enough, I cannot provide a download link since that would be copyright infringement.',
       },
     ],
-    links: [],
+    links: [
+
+    ],
   },
   {
     id: '2dgameengine',
@@ -73,15 +75,15 @@ export const projects: Project[] = [
         type: 'media-grid',
         media: [
           {
-            type: 'gif',
-            src: '/images/pengogameplay.gif',
-            alt: 'Pengo gameplay',
-          },
+          type: 'gif',
+          src: '/images/pengogameplay.gif',
+          alt: 'Pengo gameplay',
+        },
           {
-            type: 'gif',
-            src: '/images/bubblegameplay.gif',
-            alt: 'Bubble Bobble gameplay',
-          },
+          type: 'gif',
+          src: '/images/bubblegameplay.gif',
+          alt: 'Bubble Bobble gameplay',
+        },
         ],
         columns: 2,
       },
@@ -131,7 +133,9 @@ export const projects: Project[] = [
         text: 'I still love to see new innovative shaders, but I haven\'t had time to revisit graphics programming since then. I\'m planning on doing so in the future, because I do believe it could help me improve overall as a game developer.',
       },
     ],
-    links: [],
+    links: [
+
+    ],
   },
   {
     id: 'behaviourtrees',
@@ -174,13 +178,15 @@ export const projects: Project[] = [
         },
       },
     ],
-    links: [],
+    links: [
+
+    ],
   },
   {
     id: 'projectaccess',
     title: 'Project Access',
     category: 'programming',
-    thumbnail: '/images/projectaccess.jpg',
+    thumbnail: '/images/PAMain2.png',
     shortDescription: 'A fast-paced sports arcade game with online multiplayer supporting up to 10 players.',
     technologies: ['Unreal Engine', 'C++', 'Multiplayer', 'Networking'],
     content: [
@@ -189,12 +195,41 @@ export const projects: Project[] = [
         text: 'Project Access is a fast-paced sports arcade online multiplayer game developed as a student project at Digital Arts & Entertainment. Players compete in teams of up to 10, scoring points while preventing opponents from scoring using a variety of abilities and team strategies.',
       },
       {
+        type: 'media',
+        media: {
+          type: 'image',
+          src: '/images/PA1.png',
+        },
+      },
+      {
         type: 'paragraph',
         text: 'The game features 9+ abilities, character customization with level progression, multiple maps, and both first-person and third-person camera modes. Multiplayer is supported through both dedicated servers and ad-hoc networking.',
       },
       {
+        type: 'media',
+        media: {
+          type: 'image',
+          src: '/images/PA2.png',
+        },
+      },
+      {
         type: 'paragraph',
         text: 'I worked on this project as a programmer alongside Kevan Vanderstichelen, with art by Aitor Randez, Antonio Serrano, and Mattias Vandensaffele.',
+      },
+      {
+        type: 'media',
+        media: {
+          type: 'image',
+          src: '/images/PA3.png',
+        },
+      },
+      {
+        type: 'media',
+        media: {
+          type: 'youtube',
+          src: 'Zyaglqi78SQ',
+          alt: 'Project Access Trailer',
+        },
       },
     ],
     links: [
@@ -225,20 +260,22 @@ export const projects: Project[] = [
         type: 'media-grid',
         media: [
           {
-            type: 'image',
-            src: '/images/robot3.jpg',
-            alt: 'High poly bot render 1',
-          },
+          type: 'image',
+          src: '/images/robot3.jpg',
+          alt: 'High poly bot render 1',
+        },
           {
-            type: 'image',
-            src: '/images/robot2.jpg',
-            alt: 'High poly bot render 2',
-          },
+          type: 'image',
+          src: '/images/robot2.jpg',
+          alt: 'High poly bot render 2',
+        },
         ],
         columns: 2,
       },
     ],
-    links: [],
+    links: [
+
+    ],
   },
   {
     id: 'highpolymouse',
@@ -252,15 +289,15 @@ export const projects: Project[] = [
         type: 'media-grid',
         media: [
           {
-            type: 'image',
-            src: '/images/mouse.jpg',
-            alt: 'High poly mouse render 1',
-          },
+          type: 'image',
+          src: '/images/mouse.jpg',
+          alt: 'High poly mouse render 1',
+        },
           {
-            type: 'image',
-            src: '/images/mouse1.jpg',
-            alt: 'High poly mouse render 2',
-          },
+          type: 'image',
+          src: '/images/mouse1.jpg',
+          alt: 'High poly mouse render 2',
+        },
         ],
         columns: 2,
       },
@@ -269,7 +306,9 @@ export const projects: Project[] = [
         text: 'This mouse is my first ever high poly model. I had a lot of fun experimenting with edge loops and turbosmooth modifiers.',
       },
     ],
-    links: [],
+    links: [
+
+    ],
   },
   {
     id: 'unreallevel',
@@ -294,10 +333,26 @@ export const projects: Project[] = [
       {
         type: 'media-grid',
         media: [
-          { type: 'image', src: '/images/level1.png', alt: 'Unreal level screenshot 1' },
-          { type: 'image', src: '/images/level2.png', alt: 'Unreal level screenshot 2' },
-          { type: 'image', src: '/images/level3.png', alt: 'Unreal level screenshot 3' },
-          { type: 'image', src: '/images/level4.png', alt: 'Unreal level screenshot 4' },
+          {
+          type: 'image',
+          src: '/images/level1.png',
+          alt: 'Unreal level screenshot 1',
+        },
+          {
+          type: 'image',
+          src: '/images/level2.png',
+          alt: 'Unreal level screenshot 2',
+        },
+          {
+          type: 'image',
+          src: '/images/level3.png',
+          alt: 'Unreal level screenshot 3',
+        },
+          {
+          type: 'image',
+          src: '/images/level4.png',
+          alt: 'Unreal level screenshot 4',
+        },
         ],
         columns: 2,
       },
@@ -308,10 +363,26 @@ export const projects: Project[] = [
       {
         type: 'media-grid',
         media: [
-          { type: 'image', src: '/images/level5.png', alt: 'Unreal level screenshot 5' },
-          { type: 'image', src: '/images/level6.png', alt: 'Unreal level screenshot 6' },
-          { type: 'image', src: '/images/level7.png', alt: 'Unreal level screenshot 7' },
-          { type: 'image', src: '/images/level8.png', alt: 'Unreal level screenshot 8' },
+          {
+          type: 'image',
+          src: '/images/level5.png',
+          alt: 'Unreal level screenshot 5',
+        },
+          {
+          type: 'image',
+          src: '/images/level6.png',
+          alt: 'Unreal level screenshot 6',
+        },
+          {
+          type: 'image',
+          src: '/images/level7.png',
+          alt: 'Unreal level screenshot 7',
+        },
+          {
+          type: 'image',
+          src: '/images/level8.png',
+          alt: 'Unreal level screenshot 8',
+        },
         ],
         columns: 2,
       },
@@ -320,6 +391,8 @@ export const projects: Project[] = [
         text: 'Looking back at this project, I think I learned a lot. Creating / designing levels is not my strong suit but it did teach me a lot of fundamental processes that a game developer should be familiar with.',
       },
     ],
-    links: [],
+    links: [
+
+    ],
   },
 ];

@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
+import { createContext, useContext, useReducer, useEffect, useCallback, useRef } from 'react';
 import { projects as defaultProjects } from '@/config/projects';
 import type { Project, ContentBlock, Media } from '@/types/project';
 
@@ -124,9 +124,27 @@ const ProjectStoreContext = createContext<ProjectStoreContextType | undefined>(u
 
 export function ProjectStoreProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(projectReducer, { projects: loadProjects() });
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state.projects));
+
+    // Skip syncing to projects.ts on initial mount — only sync after actual edits
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
+    if (import.meta.env.DEV) {
+      const content = generateTypeScript(state.projects);
+      fetch('/__api/save-projects', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content }),
+      }).catch(() => {
+        // Silently ignore — dev server may not be ready
+      });
+    }
   }, [state.projects]);
 
   const addProject = useCallback((project: Project) => {
