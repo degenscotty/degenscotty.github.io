@@ -2,8 +2,6 @@ import { createContext, useContext, useReducer, useEffect, useCallback, useRef }
 import { projects as defaultProjects } from '@/config/projects';
 import type { Project, ContentBlock, Media } from '@/types/project';
 
-const STORAGE_KEY = 'portfolio-projects';
-
 interface ProjectStoreState {
   projects: Project[];
 }
@@ -36,14 +34,6 @@ function projectReducer(state: ProjectStoreState, action: ProjectStoreAction): P
 }
 
 function loadProjects(): Project[] {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      return JSON.parse(stored) as Project[];
-    }
-  } catch {
-    // Fall through to default
-  }
   return defaultProjects;
 }
 
@@ -127,9 +117,6 @@ export function ProjectStoreProvider({ children }: { children: React.ReactNode }
   const isInitialMount = useRef(true);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state.projects));
-
-    // Skip syncing to projects.ts on initial mount — only sync after actual edits
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;
